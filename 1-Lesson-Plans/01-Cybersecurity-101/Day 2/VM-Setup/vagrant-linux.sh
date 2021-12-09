@@ -12,7 +12,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 cd "$DIR"
 
 # Assumed home directories (updated directory)
-WIN_DIR="/d/Vagrant/Cybersecurity-Bootcamp/Linux-Module"
+WIN_DIR="/c/Users/$(logname)/Documents/Cybersecurity-Bootcamp/Linux-Module"
 MAC_DIR="/Users/$(logname)/Documents/Cybersecurity-Bootcamp/Linux-Module"
 
 # Verify Vagrant installed properly
