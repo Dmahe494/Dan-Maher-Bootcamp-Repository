@@ -4,7 +4,7 @@ Congratulations on completing the first week of your cybersecurity program!
 
 We covered _a lot_ this week, especially in the Security Challenge activities. It begs the question: how do security professionals stay informed and updated on the threats, defenses, and infosec information necessary to be effective in the field? The answer is by reading and staying up to date on prominent **reports**, **blogs**, and **research papers**.
 
-- In your first homework, you will read through four prominent security reports and answer questions in order to get a basic understanding of the market. These reports contain a lot of information and some of the language might feel esoteric. 
+- In your first homework, you will read through three prominent security reports and answer questions in order to get a basic understanding of the market. These reports contain a lot of information and some of the language might feel esoteric. 
 
 - The goal of this assignment is for you to get exposure and learn how to navigate through these reports. This is a critical skill. 
 
