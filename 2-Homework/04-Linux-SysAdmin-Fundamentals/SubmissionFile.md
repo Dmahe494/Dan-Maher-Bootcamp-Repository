@@ -9,25 +9,25 @@ Save and submit the completed file for your homework submission.
 
 1. Permissions on `/etc/shadow` should allow only `root` read and write access.
 
-    - Command to inspect permissions:
+    - Command to inspect permissions: ls -la /etc/shadow
 
     - Command to set permissions (if needed):
 
 2. Permissions on `/etc/gshadow` should allow only `root` read and write access.
 
-    - Command to inspect permissions:
+    - Command to inspect permissions: ls -la /etc/gshadow
 
     - Command to set permissions (if needed):
 
 3. Permissions on `/etc/group` should allow `root` read and write access, and allow everyone else read access only.
 
-    - Command to inspect permissions:
+    - Command to inspect permissions: ls -la /etc/group
 
     - Command to set permissions (if needed):
 
 4. Permissions on `/etc/passwd` should allow `root` read and write access, and allow everyone else read access only.
 
-    - Command to inspect permissions:
+    - Command to inspect permissions: ls -la /etc/passwd
 
     - Command to set permissions (if needed):
 
