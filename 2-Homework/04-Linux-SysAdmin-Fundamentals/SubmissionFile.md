@@ -49,7 +49,7 @@ Save and submit the completed file for your homework submission.
 
 1. Add an `engineers` group to the system.
 
-    - Command to add group: suo addgroup engineers
+    - Command to add group: sudo addgroup engineers
 
 2. Add users `sam`, `joe`, `amy`, and `sara` to the managed group.
 
