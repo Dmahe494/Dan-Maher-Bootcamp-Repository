@@ -61,7 +61,7 @@ Save and submit the completed file for your homework submission.
 
 4. Change ownership on the new engineers' shared folder to the `engineers` group.
 
-    - Command to change ownership of engineer's shared folder to engineer group: sudo chown root:engineers engineers
+    - Command to change ownership of engineer's shared folder to engineer group: sudo chgrp engineers engineers
     (extra) sudo chmod 770 engineers
 
 ### Step 4: Lynis Auditing
