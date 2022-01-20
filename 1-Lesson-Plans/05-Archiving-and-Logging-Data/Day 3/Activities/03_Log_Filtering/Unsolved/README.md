@@ -20,7 +20,7 @@ In this activity, you are a junior administrator at Rezifp Pharma Inc. The compa
 
    - Checking the `/etc/systemd/journald.conf` for `Storage`:
  
-     - Run `grep Storage /etc/systemd/journald.conf`
+     
  
        Output should appear as below:
     
@@ -29,7 +29,7 @@ In this activity, you are a junior administrator at Rezifp Pharma Inc. The compa
         ```
     - If not then modify these settings in `/etc/systemd/journald.conf`.
  
-     - Run: `sudo nano /etc/systemd/journald.conf`
+     
  
        ```bash
        #  This file is part of systemd.
@@ -50,13 +50,13 @@ In this activity, you are a junior administrator at Rezifp Pharma Inc. The compa
        #Compress=yes
        ```
  
-     - `Storage=` is the persistence setting and `auto` indicates logging persistence if space is available.
+     
  
-       - Uncomment the `Storage=auto` and save the file.
+      
  
     - Whenever the `journal.conf` file is modified, `systemd-journald` needs to be restarted before the changes take effect.
  
-      - Run: `sudo systemctl restart systemd-journald`
+    
  
       - Log persistence is now enabled.
  
@@ -146,11 +146,11 @@ In this activity, you are a junior administrator at Rezifp Pharma Inc. The compa
  
        - Logged in as criminal hacker, check your UID:
  
-       - Run: `id`
+     
  
        - Take note of the user ID. For this example, we'll use `1013`.
  
-       - Run: `journalctl _UID=1013`
+     
  
     - What did the `journalctl -ef` output display the malicious activity performed by the attacker and `journalctl _UID=1013` did not?
  
