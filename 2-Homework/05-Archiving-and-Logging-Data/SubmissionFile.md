@@ -9,10 +9,13 @@ Save and submit the completed file for your homework submission.
 ### Step 1: Create, Extract, Compress, and Manage tar Backup Archives
 
 1. Command to **extract** the `TarDocs.tar` archive to the current directory:
+sudo tar -xf TarDocs.tar
 
 2. Command to **create** the `Javaless_Doc.tar` archive from the `TarDocs/` directory, while excluding the `TarDocs/Documents/Java` directory:
+sudo tar -cvf Javaless_Docs.tar Google-Maps-Hacks Design-Patterns IntelliJIDEA_ReferenceCard.pdf Music-Sheets
 
 3. Command to ensure `Java/` is not in the new `Javaless_Docs.tar` archive:
+sudo tar -tf Javaless_Docs.tar | grep -i 'java'
 
 **Bonus** 
 - Command to create an incremental archive called `logs_backup_tar.gz` with only changed files to `snapshot.file` for the `/var/log` directory:
@@ -20,30 +23,43 @@ Save and submit the completed file for your homework submission.
 #### Critical Analysis Question
 
 - Why wouldn't you use the options `-x` and `-c` at the same time with `tar`?
-
----
+ -c creates a new archive, -x extracts files from an existing archive.
 
 ### Step 2: Create, Manage, and Automate Cron Jobs
 
 1. Cron job for backing up the `/var/log/auth.log` file:
-
----
+00 6 * * 3 gzip ~/auth_backup.tgz /var/log/auth.log
 
 ### Step 3: Write Basic Bash Scripts
 
 1. Brace expansion command to create the four subdirectories:
+sudo mkdir -p ~/backups/{freemem,diskuse,openlist,freedisk}
 
 2. Paste your `system.sh` script edits below:
 
     ```bash
     #!/bin/bash
-    [Your solution script contents here]
+ 2 sudo chmod -R 777 ~/backups
+ 3 #Prints the amount of free memory on the system and saves it to ~/backups/freemem/free_mem.txt.
+sudo free -h > ~/backups/freemem/free_mem.txt
+ 4 #Prints disk usage and saves it to ~/backups/diskuse/disk_usage.txt.
+sudo du -h > ~/backups/diskuse/disk_usage.txt
+ 5 #Lists all open files and saves it to ~/backups/openlist/open_list.txt.
+sudo lsof > ~/backups/openlist/open_list.txt
+ 6 #Prints file system disk space statistics and saves it to ~/backups/freedisk/free_disk.txt.
+sudo df -h > ~/backups/freedisk/free_disk.txt]
     ```
 
 3. Command to make the `system.sh` script executable:
+chmod +x system.sh
 
 **Optional**
 - Commands to test the script and confirm its execution:
+sudo ./system.sh
+cat free_mem.txt
+cat disk_usage.txt
+cat open_list.txt
+cat free_disk.txt
 
 **Bonus**
 - Command to copy `system` to system-wide cron directory:
@@ -59,7 +75,18 @@ Save and submit the completed file for your homework submission.
     - Add your config file edits below:
 
     ```bash
-    [Your logrotate scheme edits here]
+/var/log/auth.log {
+# Rotates weekly
+weekly
+# Rotates only the seven most recent logs
+rotate 7
+# Does not rotate empty logs
+notifempty
+# Delays compression
+delaycompress
+# Skips error messages for missing logs and continues to next log
+missingok
+}
     ```
 ---
 
