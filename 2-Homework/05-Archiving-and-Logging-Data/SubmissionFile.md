@@ -74,7 +74,6 @@ cat free_disk.txt
 
     - Add your config file edits below:
 
-    ```bash
 /var/log/auth.log {
 # Rotates weekly
 weekly
@@ -87,12 +86,12 @@ delaycompress
 # Skips error messages for missing logs and continues to next log
 missingok
 }
-    ```
 ---
 
 ### Bonus: Check for Policy and File Violations
 
 1. Command to verify `auditd` is active:
+systemctl status auditd
 
 2. Command to set number of retained logs and maximum log file size:
 
@@ -112,8 +111,10 @@ missingok
     ```
 
 4. Command to restart `auditd`:
+systemctl resart auditd
 
 5. Command to list all `auditd` rules:
+auditctl -l
 
 6. Command to produce an audit report:
 
