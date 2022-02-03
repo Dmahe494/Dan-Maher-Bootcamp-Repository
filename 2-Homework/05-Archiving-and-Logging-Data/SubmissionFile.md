@@ -12,7 +12,7 @@ Save and submit the completed file for your homework submission.
 sudo tar -xf TarDocs.tar
 
 2. Command to **create** the `Javaless_Doc.tar` archive from the `TarDocs/` directory, while excluding the `TarDocs/Documents/Java` directory:
-sudo tar -cvf Javaless_Docs.tar Google-Maps-Hacks Design-Patterns IntelliJIDEA_ReferenceCard.pdf Music-Sheets
+sudo --exclude 'TarDocs/Documents/Java' tar -cvf Javaless_Docs.tar Google-Maps-Hacks Design-Patterns IntelliJIDEA_ReferenceCard.pdf Music-Sheets
 
 3. Command to ensure `Java/` is not in the new `Javaless_Docs.tar` archive:
 sudo tar -tf Javaless_Docs.tar | grep -i 'java'
@@ -95,10 +95,11 @@ systemctl status auditd
 
 2. Command to set number of retained logs and maximum log file size:
 
-    - Add the edits made to the configuration file below:
+    - Add the edits made to the configuration file below: nano /etc/audit/audit.conf
 
     ```bash
-    [Your solution edits here]
+    [num of logs = 7
+    max logs =35 ]
     ```
 
 3. Command using `auditd` to set rules for `/etc/shadow`, `/etc/passwd` and `/var/log/auth.log`:
@@ -107,7 +108,9 @@ systemctl status auditd
     - Add the edits made to the `rules` file below:
 
     ```bash
-    [Your solution edits here]
+  [-w /etc/shadow -p wra -k hashpass_audit
+  -w /etc/passwd -p wra -k userpass_audit
+  -w /var/log/auth_log wra -k authlog_audit]
     ```
 
 4. Command to restart `auditd`:
@@ -116,11 +119,11 @@ systemctl resart auditd
 5. Command to list all `auditd` rules:
 auditctl -l
 
-6. Command to produce an audit report:
+6. Command to produce an audit report: aureport
 
-7. Create a user with `sudo useradd attacker` and produce an audit report that lists account modifications:
+7. Create a user with `sudo useradd attacker` and produce an audit report that lists account modifications: aureport -m 
 
-8. Command to use `auditd` to watch `/var/log/cron`:
+8. Command to use `auditd` to watch `/var/log/cron`: auditctl -w /var/log/cron
 
 9. Command to verify `auditd` rules:
 
