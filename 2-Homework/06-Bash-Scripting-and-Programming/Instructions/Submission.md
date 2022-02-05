@@ -60,7 +60,7 @@ sudo nano etc/ssh/sshd_config
 2. Escalate your privileges to the `root` user. Use John to crack the entire `/etc/shadow` file:
 
     - sudo su 
-    John /etc/shadow
+    - john /etc/shadow
 
 ---
 
