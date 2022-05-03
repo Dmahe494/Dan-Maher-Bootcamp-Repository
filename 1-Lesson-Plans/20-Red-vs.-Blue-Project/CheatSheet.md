@@ -84,13 +84,13 @@ Kibana can very effectively utilize dashboards. The only caveat is that you have
 
   - A great free tutorial for creating a Kabana dashboard can be found [here](https://www.tutorialspoint.com/kibana/kibana_create_dashboard.htm).
 
-  - The official Elastic tutorial for creating a dashboard is [here](https://www.elastic.co/guide/en/kibana/current/dashboard-create-new-dashboard.html).
+  - The official Elastic tutorial for creating a dashboard is [here](https://www.elastic.co/guide/en/kibana/current/create-a-dashboard-of-panels-with-web-server-data.html).
 
 #### Searching in Kibana
 
 Kibana also allows you to search logs and data directly.
 
-- A few great resources for creating search queries can be found [here](https://deep-log-inspection.readthedocs.io/en/latest/user/kibana-logs/) and [HERE](https://www.elastic.co/guide/en/kibana/current/search.html).
+- A few great resources for creating search queries can be found [here](https://deep-log-inspection.readthedocs.io/en/latest/user/kibana-logs/) and [HERE](https://www.elastic.co/guide/en/kibana/current/kuery-query.html).
 
 ---
 
